@@ -2,9 +2,8 @@ import java.util.Arrays;
 
 public class MergeSort
 {
-    private static int[] merge(int[] arr1, int[] arr2)
+    private static void merge(int[] result, int[] arr1, int[] arr2)
     {
-        int[] result = new int[arr1.length + arr2.length];
         int i = 0, ai = 0, bi = 0;
         while (i < result.length)
         {
@@ -18,8 +17,6 @@ public class MergeSort
                 result[i] = arr2[bi++];
             i++;
         }
-        //System.out.println(Arrays.toString(result));
-        return result;
     }
 
     private static int[] mS(int[] arr)
@@ -31,16 +28,12 @@ public class MergeSort
 
         left = mS(left);
         right = mS(right);
-        return merge(left, right);
+        merge(arr, left, right);
+        return arr;
     }
 
     public static void mergeSort(int[] arr)
-    { 
-        //System.out.println(Arrays.toString(mS(orig_arr)));
-        //System.out.println(mS(orig_arr));
-        //System.out.println(orig_arr);
-        arr = mS(arr);
-    }
+    { arr = mS(arr); }
 
     public static void main(String[] args)
     {
