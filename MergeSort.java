@@ -19,21 +19,18 @@ public class MergeSort
         }
     }
 
-    private static int[] mS(int[] arr)
+    private static int[] mergeSort(int[] arr)
     {
         if (arr.length == 1) return arr;
 
         int[] left = Arrays.copyOfRange(arr, 0, arr.length/2);
         int[] right = Arrays.copyOfRange(arr, arr.length/2, arr.length);
 
-        left = mS(left);
-        right = mS(right);
+        left = mergeSort(left);
+        right = mergeSort(right);
         merge(arr, left, right);
         return arr;
     }
-
-    public static void mergeSort(int[] arr)
-    { arr = mS(arr); }
 
     public static void main(String[] args)
     {
