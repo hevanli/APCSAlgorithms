@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Arrays;
 
 public class QuickSort
@@ -36,9 +37,11 @@ public class QuickSort
 
     public static void main(String[] args)
     {
-        int[] arr = {1,4,6,2,5,3};
-        System.out.println("Before Sort: " + Arrays.toString(arr));
-        quickSort(arr, 0, arr.length - 1);
-        System.out.println("After Sort: " + Arrays.toString(arr));
+        int[] arr1 = new Random().ints(100, 0, 100).toArray();
+        int[] arr2 = arr1.clone();
+        
+        System.out.println("Before Sort: " + Arrays.toString(arr1));
+        quickSort(arr1, 0, arr1.length - 1);
+        System.out.println("After Sort: " + Arrays.toString(arr1));
     }
 }

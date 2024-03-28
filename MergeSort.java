@@ -19,7 +19,7 @@ public class MergeSort
         }
     }
 
-    private static int[] mergeSort(int[] arr)
+    public static int[] mergeSort(int[] arr)
     {
         if (arr.length == 1) return arr;
 
