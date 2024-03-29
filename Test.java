@@ -5,8 +5,9 @@ public class Test
 {
     public static void main(String[] args)
     {
-        int[] arr1 = new Random().ints(10000, 0, 10000).toArray();
+        int[] arr1 = new Random().ints(100000, 0, 100000).toArray();
         int[] arr2 = arr1.clone();
+        int[] arr3 = arr1.clone();
 
         long startTime, endTime, totalTime;
 
@@ -21,5 +22,11 @@ public class Test
         endTime = System.nanoTime();
         totalTime = (endTime - startTime) / 1000;
         System.out.println("Merge Sort took " + totalTime + " milliseconds");
+
+        startTime = System.nanoTime();
+        SelectionSort.selectionSort(arr3);
+        endTime = System.nanoTime();
+        totalTime = (endTime - startTime) / 1000;
+        System.out.println("Selection Sort took " + totalTime + " milliseconds");
     }
 }
